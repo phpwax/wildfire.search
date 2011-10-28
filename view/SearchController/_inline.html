@@ -2,7 +2,7 @@
   <?if($results && $results->count()):?>
     <ul class='inline_search_results_listing'>
     <?foreach($results as $i=>$res):?>
-      <li><a href="<?=$res->permalink?>"><?=$res->humanize()?></a></li>
+      <li><a href="<?=$res->permalink?>"><?=stripslashes($res->humanize())?></a></li>
     <?endforeach?>
     </ul>
     <?if($paginate && $results->total_pages > 1):?>
