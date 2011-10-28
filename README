@@ -9,3 +9,15 @@ public $search_fields = array('text'=>array('cols'=>array('title', 'content'), '
 'fuzzy' does a like, otherwise an exact match
 
 all you need to do is make a view in app/view/search/index that uses $results
+
+Now has an inline search ability:
+
+to trigger, add the class 'inline_search_form' to the form, and 'inline_search' to the text element to be monitored for keydowns
+
+this will use the forms action (should be /search/ or a child class of) and appends "_inline" to do an ajax call
+
+you can add filters etc as the form is serialised and all sent to the search
+
+within the form the class 'inline_search_results' will be replaced with the results that are returned
+
+loading, failed & success classes are added the text area

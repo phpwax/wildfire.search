@@ -14,6 +14,7 @@ jQuery(document).ready(function(){
           obj.removeClass("loading");
         },
         fail:function(res){
+          form.find(".inline_search_results").html("");
           obj.removeClass("loading").addClass("failed");
         }
       });
