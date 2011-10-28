@@ -1,0 +1,11 @@
+Provides SearchController.
+
+Has a config for Search params default is:
+
+public $search_fields = array('text'=>array('cols'=>array('title', 'content'), 'fuzzy'=>true));
+
+'text' is the key on the $_REQUEST search array - $_REQUEST['search']['text']
+'cols' are the columns on the model (model is based on the $cms_content_class)
+'fuzzy' does a like, otherwise an exact match
+
+all you need to do is make a view in app/view/search/index that uses $results
