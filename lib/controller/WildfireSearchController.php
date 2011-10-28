@@ -47,6 +47,13 @@ class WildfireSearchController extends ApplicationController {
   }
 
 
+  public function _inline(){
+    $this->use_layout = false;
+    $this->paginate = true;
+    $this->index();
+    $this->use_view = "_inline";
+  }
+
 
 }
 ?>
