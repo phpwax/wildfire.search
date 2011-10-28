@@ -1,5 +1,6 @@
 <?
-$i = array_pop(array_keys($search_fields));
+$i = array_shift($search_fields);
+$name = $i['name'];
 ?>
 <div class='inline_search_results'>
   <?if($results && $results->count()):?>
@@ -9,7 +10,7 @@ $i = array_pop(array_keys($search_fields));
     <?endforeach?>
     </ul>
     <?if($paginate && $results->total_pages > 1):?>
-    <a href="/search/?search[<?=$i?>]=<?=urlencode($searched[$i])?>" class='inline_search_more_results'>View all results</a>
+    <a href="/search/?search[<?=$name?>]=<?=urlencode($searched[$name])?>" class='inline_search_more_results'>View all results</a>
     <?endif?>
   <?endif?>
 </div>

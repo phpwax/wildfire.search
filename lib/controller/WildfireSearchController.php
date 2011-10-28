@@ -3,7 +3,7 @@
 class WildfireSearchController extends ApplicationController {
 
   public $results = array();
-  public $search_fields = array('text'=>array('cols'=>array('title', 'content'), 'fuzzy'=>true));
+  public $search_fields = array('text'=>array('name'=>'text', 'cols'=>array('title', 'content'), 'fuzzy'=>true));
   public $paginate = false;
   /**
    * $model_filters = array(
