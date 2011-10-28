@@ -21,3 +21,7 @@ you can add filters etc as the form is serialised and all sent to the search
 within the form the class 'inline_search_results' will be replaced with the results that are returned
 
 loading, failed & success classes are added the text area
+
+to include the js use this:
+
+<?=js_bundle("core", array(), "wildfire.search")?>
