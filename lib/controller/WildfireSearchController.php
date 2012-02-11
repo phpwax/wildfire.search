@@ -15,7 +15,7 @@ class WildfireSearchController extends ApplicationController {
 
   public function index(){
     //based on the cms content type & scope
-    $model = new $this->cms_content_class($this->cms_live_scope);
+    $model = new $this->cms_content_class($this->cms_search_scope);
     //grab the search param data
     if($this->searched = Request::param('search')){
       $sql = "";
