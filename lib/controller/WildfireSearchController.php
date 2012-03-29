@@ -23,6 +23,7 @@ class WildfireSearchController extends ApplicationController {
       foreach($this->search_fields as $post_key=>$config){
         //if there is a matching var in the post data, we'll use it
         if($term = $this->searched[$post_key]){
+          $term = addslashes($term);
           foreach($config['cols'] as $col){
             //need to make these escaped, use pdo etc
             if($config['fuzzy']) $sql .= "(`".$col."` LIKE '%".$term."%') OR";
