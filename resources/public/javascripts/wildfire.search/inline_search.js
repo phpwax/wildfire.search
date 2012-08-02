@@ -1,13 +1,16 @@
 jQuery(document).ready(function(){
   var inline_timer = false;
   jQuery("form.inline_search_form").find(".inline_search").bind("keydown", function(){
-    var obj = jQuery(this), form = obj.parents("form");
+    var obj = jQuery(this),
+        form = obj.parents("form"),
+        action = (form.attr('data-action')) ? form.attr('data-action') : form.attr("action")
+        ;
     obj.addClass('loading');
     clearTimeout(inline_timer);
     inline_timer = setTimeout(function(){
       var data = form.serialize();
       jQuery.ajax({
-        url:form.attr("action")+"_inline",
+        url:action+"_inline",
         data:data,
         success:function(res){
           form.find(".inline_search_results").replaceWith(res);
@@ -20,5 +23,5 @@ jQuery(document).ready(function(){
       });
     }, 500);
   });
-  
+
 });
