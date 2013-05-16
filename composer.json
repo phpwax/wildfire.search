@@ -1,0 +1,17 @@
+{
+    "name": "phpwax/wildfire.search",
+    "authors": [
+        {
+            "name": "Charles Marshall",
+            "email": "charles@oneblackbear.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    },
+    "license": "MIT",
+    "autoload": {
+      "files": ["ini.php"]
+    }
+}
